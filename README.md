@@ -1,4 +1,4 @@
-# Coding Playground
+# Razatastic's Coding Playground
 ### This repository is my collection of things I've worked on while hopping from one language to another. 
 ##### Note - It exists solely as a "playground" for me to experiment in. 
 ---
