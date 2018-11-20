@@ -4,6 +4,8 @@
  * find the two missing numbers. e.g. - missing([4, 2, 3]) = 1, 5
  */
 
+// TO-DO: As of right now, program skips over missing numbers that are back to back (e.g. - 4 & 5 or 6 & 7)
+
 import java.util.Arrays;
 
 public class MissingNumbers {
