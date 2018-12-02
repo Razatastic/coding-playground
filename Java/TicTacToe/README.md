@@ -1,6 +1,7 @@
 # Tic-Tac-Toe
+
 ### How to play?
---
+
 - The game is played on a 3x3 grid.
 
 - Player one is X, and player two is O. Players take turns putting their marks in empty grid spaces.
