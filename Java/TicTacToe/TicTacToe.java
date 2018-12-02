@@ -35,8 +35,7 @@ public class TicTacToe {
         }
     }
 
-    static boolean checkWinConditions() {
-        boolean gameEnd = false;
+    static void checkWinConditions() {
         for (int i = 0; i < 8; i++) {
             String line = null;
             switch (i) {
@@ -67,10 +66,10 @@ public class TicTacToe {
             }
             if (line.equals("XXX")) {
                 playerOne.setScore(1);
-                gameEnd = true;
+                gameState = false;
             } else if (line.equals("OOO")) {
                 playerTwo.setScore(1);
-                gameEnd = true;
+                gameState = false;
             }
         }
 
@@ -79,11 +78,9 @@ public class TicTacToe {
             if (Arrays.asList(board).contains(String.valueOf(i + 1))) {
                 break;
             } else if (i == 8) {
-                gameEnd = true;
+                gameState = false;
             }
         }
-
-        return gameEnd;
     }
 
     // Print Functions
@@ -145,15 +142,12 @@ public class TicTacToe {
                 playTurn();
                 playerOne.setTurn(true);
             }
-            if (checkWinConditions()) {
-                gameState = false;
-            }
+            checkWinConditions();
         }
 
         if (!gameState) {
+            scn.close(); // Close scanner (to avoid memory leaks)
             printResult();
         }
-
-        scn.close(); // Close scanner (to avoid memory leaks)
     }
 }
