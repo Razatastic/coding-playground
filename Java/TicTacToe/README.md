@@ -1,3 +1,4 @@
 ### How to play?
-##### After both players enter their names, player one picks a number on the board to fill with his/her symbol. Players alternate turns until the board is either filled or a win condition is met. 
+After both players enter their names, player one picks a number on the board to fill with his/her symbol. Players alternate turns until the board is either filled or a win condition is met. 
+
 ![Playing Tic-Tac-Toe](https://i.imgur.com/Bmy1Zpc.png)
