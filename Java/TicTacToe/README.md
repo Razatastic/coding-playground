@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
----
+-
 ### How to play?
 - The game is played on a 3x3 grid.
 
