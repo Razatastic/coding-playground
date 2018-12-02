@@ -1,6 +1,6 @@
 class Player {
     String name = " ";
-    char symbol = ' ';
+    String symbol = " ";
     int score = 0;
     boolean turn = false;
 
@@ -15,11 +15,11 @@ class Player {
         this.name = input;
     }
 
-    char getSymbol() {
+    String getSymbol() {
         return this.symbol;
     }
 
-    void setSymbol(char input) {
+    void setSymbol(String input) {
         this.symbol = input;
     }
 
