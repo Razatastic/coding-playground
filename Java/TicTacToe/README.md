@@ -1,6 +1,20 @@
 # Tic-Tac-Toe
 
-### How to play?
+### Setup
+
+- Make sure Java 7 or higher is installed on your system.
+
+- Open Terminal and navigate to this program's directory.
+
+### Compiling & Running
+
+Run the command
+
+```console
+$javac TicTacToe.java && java TicTacToe
+```
+
+### Rules
 
 - The game is played on a 3x3 grid.
 
