@@ -1,0 +1,15 @@
+html,
+body {
+  background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+  min-height: 100%;
+}
+h1 {
+  color: white;
+}
+.center {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
