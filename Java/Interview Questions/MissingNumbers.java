@@ -1,47 +1,46 @@
-
 /*
  * Problem: Given an array containing all the numbers from 1 to n except two,
  * find the two missing numbers. e.g. - missing([4, 2, 3]) = 1, 5
  */
 
-// TO-DO: As of right now, program skips over missing numbers that are back to back (e.g. - 4 & 5 or 6 & 7)
+/*
+ * Solution: 
+ * I sorted through the initial array. O(n log n)
+ * Then, I used the index of the array as a basis of comparison with the value at that index. 
+ * For instance, the comparison index starts off as 1 since the problem is from 1 to n. 
+ * So if arr[0] is not equal to 1, it is added to the missingNums ArrayList. 
+ * Additionally, if the next number isn't the right number in terms of index (e.g. - 1, 2, 3, 45), 
+ * then the program will add all the numbers between 3 and 45 to the missingNums list.
+ */
 
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class MissingNumbers {
-    public static void main(String[] args) {
-        int[] missing = { 1, 4, 2, 3, 7 };
-        for (int i = 0; i < 2; i++) {
-            System.out.println("The " + (i + 1) + "st number missing is " + isMissing(missing)[i]);
-        }
-    }
 
-    // Sort array + check if next value in array is 1 bigger than last element
-    public static int[] isMissing(int[] input) {
+    public static ArrayList<Integer> isMissing(int[] input) { // Sort array and compare value with index
         Arrays.sort(input); // Sort input array O(n log n)
-        int[] missingNums = new int[2]; // Array to store missing numbers
-        int firstIndex = 1; // Start 1st index with 1 because index 0 should always be 1
-        int secondIndex = 2; // Used for comparison
+        System.out.println(Arrays.toString(input));
+        ArrayList<Integer> missingNums = new ArrayList<Integer>(); // Store missing numbers in this ArrayList
+        int comparisonVal = 1; // Used as a basis of comparison with value at current index
 
-        if (input[0] != 1) { // Check if 1 exists in array, if not, add it to list of missingNums
-            missingNums[0] = 1;
-        }
-
-        while (firstIndex < input.length && secondIndex != input.length) {
-            if (input[firstIndex] + 1 != input[secondIndex]) {
-                if (missingNums[0] == 0) {
-                    missingNums[0] = input[firstIndex] + 1;
-                } else {
-                    missingNums[1] = input[firstIndex] + 1;
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] != comparisonVal) { // If the value doesn't equal the comparisonVal, then add it to the missing
+                                             // list
+                int valueBeingCompared = comparisonVal; // This is done so that the value of comparisonVal doesn't
+                                                        // affect the for loop
+                for (int j = 0; j < (input[i] - valueBeingCompared); j++) { // Add all missingNums in this range
+                    missingNums.add(comparisonVal);
+                    comparisonVal++;
                 }
             }
-            firstIndex++;
-            secondIndex++;
+            comparisonVal++;
         }
+        return missingNums;
+    }
 
-        if (missingNums[1] == 0) {
-            missingNums[1] = input[input.length - 1] + 1;
-        }
-        return missingNums; // Return array of missing numbers
+    public static void main(String[] args) {
+        int[] missing = { 1, 4, 2, 3, 7 };
+        System.out.println("The missing numbers are " + isMissing(missing));
     }
 }
