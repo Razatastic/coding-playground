@@ -73,7 +73,7 @@ public class MaxDiffOddEven {
         testList.add(3);
         testList.add(-4);
 
-        System.out.println("The max difference between the smallest odd and the largest even in the list "
-                + Arrays.toString(testList.toArray()) + " is " + maxDiff(testList));
+        System.out.println("The max difference between the smallest odd and the largest even in the list " + testList
+                + " is " + maxDiff(testList));
     }
 }
